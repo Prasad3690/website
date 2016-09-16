@@ -1,0 +1,525 @@
+<html>
+<head>
+<title>CAR WEBSITE</title>
+<meta name="viewport" content="width=device-width,initial-scale='1'"/>
+<script src="modal.js"></script>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<script src="carousel.js"></script>
+<script src="jquery-1.12.1.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<style>
+#loading{
+display:block;
+position:absolute;
+left:35%;
+top:30%;
+background-color:#d3d3d3;
+padding:5%;
+border-radius:5%;
+}
+#_loading{
+	position:relative;
+	width:234px;
+	height:28px;
+	margin:auto;
+}
+
+.loading{
+	position:absolute;
+	top:0;
+	background-color:rgb(0,0,0);
+	width:28px;
+	height:28px;
+	animation-name:bounce_loading;
+	animation-duration:0.775s;
+	animation-iteration-count:infinite;
+	animation-direction:normal;
+	transform:scale(.3);
+	border-radius:19px;
+}
+
+#loading_1{
+	left:0;
+	animation-delay:0.316s;
+}
+
+#loading_2{
+	left:29px;
+	animation-delay:0.3925s;
+}
+
+#loading_3{
+	left:58px;
+	animation-delay:0.469s;
+}
+
+#loading_4{
+	left:88px;
+	animation-delay:0.5455s;
+}
+
+#loading_5{
+	left:117px;
+	animation-delay:0.622s;
+}
+
+#loading_6{
+	left:146px;
+	animation-delay:0.6985s;
+}
+
+#loading_7{
+	left:175px;
+	animation-delay:0.775s;
+}
+
+#loading_8{
+	left:205px;
+	animation-delay:0.8615s;
+}
+
+
+
+@keyframes bounce_loading{
+	0%{
+	transform:scale(1);
+		background-color:rgb(0,0,0);
+	}
+
+	100%{
+	transform:scale(.3);
+		background-color:rgb(255,255,255);
+	}
+}
+#newmenu,#newsmenu,#usedmenu{
+font-family:Garamond;
+font-size:21px;
+}
+#newsmenu{
+width:100%;
+}
+.logo{
+height:150px;
+}
+#row1,#row2,#row3,#row4,#row5,#row6,#row7,#row8{
+font-size:22px;
+}
+#row1
+{
+background-image:url('Images/Audi.png');
+display:inline-block;
+}
+.glyphicon-ok{
+color:white;
+padding:2%;
+border-radius:50%;
+background-color:green;
+}
+.carousel{
+width:100%;
+height:450px;
+background-attachment:fixed;
+}
+.carousel-inner > .item > img,
+.carousel-inner > .item > a > img {
+width: 100%;
+height:450px;
+margin: auto;
+}
+#logos_main{
+margin-top:1%;
+padding:2.5%;
+background-color:#293448;
+box-shadow:1px 1px 20px black;
+}
+#details{
+margin:5%;
+font-family:Calibri;
+font-size:25px;
+margin-left:10%;
+margin-right:40%;
+}
+footer{
+background-color:black;
+}
+#details_content{
+margin-left:2%;
+}
+.heading_table{
+cursor:pointer;
+color:rgb(110,110,110);
+padding-left:5%;
+padding-right:10%;
+}
+.table_rows{
+padding-top:3%;
+padding-left:5%;
+cursor:pointer;
+}
+.table_rows2{
+padding-left:5%;
+cursor:pointer;
+}
+.lists li{
+display:inline;
+}
+.lists_box{
+width:30%;
+height:200px;
+border:1px solid black;
+}
+.usedcars{
+background-image:url('Image/Audi.png');
+}
+#feedback_box{
+display:block;
+position:absolute;
+left:30%;
+top:50%;
+width:300px;
+border-radius:20%;
+}
+#search{
+position:absolute;
+left:4%;
+top:45%;
+z-index:2;
+height:150px;
+width:500px;
+border-radius:15px;
+padding-top:1%;padding-right:2%;
+box-shadow:1px 1px 10px black;
+background-color:rgb(50,50,50);
+}
+.glyphicon-star{
+color:Gold;
+}
+.searchbtn{
+background-color:#f23d18;
+color:white;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+	margin-top:70px;
+	padding-left:20%;
+	padding-right:20%;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 100%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #f23d18;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #f23d18;
+    color: white;
+}
+.mailbtn{
+background:white;
+color:#f23d18;
+font-family:Calibri;
+font-size:20px;
+}
+</style>
+</head>
+<script>
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('content').style.visibility="hidden";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('interactive');
+		 var el = document.getElementById('loading');
+		 fadeOut(el);
+         document.getElementById('content').style.visibility="visible";
+		 function fadeOut(el){
+		el.style.opacity = 1;
+		(function fade() {
+		if ((el.style.opacity -= .1) < 0) {
+		el.style.display = "none";
+		} else {
+		requestAnimationFrame(fade);
+		}
+		})();
+		}
+		},500);
+	}
+}
+</script>
+<script>
+$(document).ready(function(){
+	$("#new").on({
+		mouseover:function(){
+		$("#newmenu").show();
+		},
+		mouseleave:function(){
+		$("#newmenu").hide();
+		}
+	});
+	$("#feedback_box").hide();
+	$("#used").on({
+		mouseover:function(){
+		$("#usedmenu").show();
+		},
+		mouseleave:function(){
+		$("#usedmenu").hide();
+		}
+	});
+	$("#news").on({
+		mouseover:function(){
+		$("#newsmenu").show();
+		},
+		mouseleave:function(){
+		$("#newsmenu").hide();
+		}
+	});
+	/*setTimeout(modal_calling,3000);*/
+	/*setInterval(modal_calling, 60000*5);*/
+	function modal_calling(){
+	$("#mymodal1").modal("show");
+	}
+$("#up").hide();
+$("#latest").hide();
+$("#old_content").show();
+$("#coming").click(function(){
+$("#up").show();
+$("#coming").addClass("active");
+$("#late").removeClass("active");
+$("#old").removeClass("active");
+$("#latest").hide();
+$("#old_content").hide();
+});
+$("#upcoming").click(function(){
+$("#up").show();
+$("#coming").addClass("active");
+$("#late").removeClass("active");
+$("#old").removeClass("active");
+$("#latest").hide();
+$("#old_content").hide();
+});
+$("#late").click(function(){
+$("#latest").show();
+$("#up").hide();
+$("#old_content").hide();
+$("#late").addClass("active");
+$("#coming").removeClass("active");
+$("#old").removeClass("active");
+});
+$("#old").click(function(){
+$("#old_content").show();
+$("#up").hide();
+$("#latest").hide();
+$("#old").addClass("active");
+$("#late").removeClass("active");
+$("#coming").removeClass("active");
+});
+var modal=document.getElementById("myModal");
+var btn = document.getElementById("feedback");
+var span = document.getElementsByClassName("close")[0];
+btn.onclick = function() {
+    modal.style.display = "block";
+}
+span.onclick = function() {
+    modal.style.display = "none";
+}
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
+});
+
+</script>
+<body>
+<div id="loading" style="font-family:Garamond;">
+<h1><center><b><i>Loading</b></i></center></h1>
+<div id="_loading">
+<div id="loading_1" class="loading"></div>
+<div id="loading_2" class="loading"></div>
+<div id="loading_3" class="loading"></div>
+<div id="loading_4" class="loading"></div>
+<div id="loading_5" class="loading"></div>
+<div id="loading_6" class="loading"></div>
+<div id="loading_7" class="loading"></div>
+<div id="loading_8" class="loading"></div>
+</div></div>
+<div id="content">
+<nav class="navbar navbar-inverse navbar-fixed-top">
+ <div class="navabar-header" style="font-family:Kunstler Script;color:white;Cursor:pointer;">
+ <a class="navbar-brand" style="color:white;padding-bottom:3.5%;padding-left:2%;padding-top:4.5%;"><span style="font-size:70px;">Cardekho</span></a><label class="navbar-brand" style="color:white;font-size:18px;margin-top:1%;margin-left:3.5%;font-family:Calibri"><span class="glyphicon glyphicon-phone-alt"></span> 1800-280-3930</label>
+ </div>
+ <ul class="nav navbar-nav navbar-right" style="font-size:20px;font-family:TimesNewRoman;padding:1%;padding-right:3%;">
+      <li class="active"><a href="#">HOME</a></li>
+      <li><a href="#" id="feedback">FEEDBACK</a></li>
+      <li><a href="#">CONTACT</a></li></br></br>
+      <li id="new"><a href="#">NEW <span class="caret"></span></a>
+	   <ul class="dropdown-menu" role="menu" id="newmenu">
+		<li ><a href="search.html" ><b>Search</b></li></a>
+		<li id="upcoming"><a href="#up" ><b>Upcomingcars</b></li></a>
+		<li ><a href="offers.html" ><b>Offers</b></li></a>
+		<li ><a href="Delivers.html" ><b>Delivery</b></li></a>
+	  </ul></li>
+      <li id="used"><a href="feedback.html">USED <span class="caret"></span></a>
+	  <ul class="dropdown-menu" role="menu" id="usedmenu">
+		<li><a href="search.html" ><b>Cars by Location</b></li></a>
+		<li><a href="upcoming.html" ><b>Search used cars</b></li></a>
+	  </ul></li>
+      <li id="news"><a href="contact.html">NEWS & REVIEWS <span style="background-color:red;color:white;border-radius:40%;">&nbsp;&nbsp;3&nbsp; </span>&nbsp;<span class="caret"></span></a>
+	  <ul class="dropdown-menu" role="menu" id="newsmenu">
+		<li><a href="new&reviews.html" ><b>Car News</b></li></a>
+		<li><a href="upcoming.html" ><b>User Reviews</b></li></a>
+	  </ul></li>
+</ul>
+</nav>
+<div id="search" style="font-family:Garamond">
+<center><h2 style="font-family:Garamond;color:white;"><label>Search The Car</label></h2></center>
+<div style=""><form method="POST" action="query.php">
+<div class="col-sm-9"><input type="text" style="border-color:#f23d18;" class="form-control" placeholder="Search Your Car" required/></div><button style="font-size:15px;font-family:TimesNewRoman;" class="col-sm-3 btn searchbtn" type="submit">Search <span class="glyphicon glyphicon-search"></span></button></div></form>
+</div>
+<div id="myCarousel" style="margin-top:10%;" class="carousel slide" data-ride="carousel" data-interval="2000">
+<div class="carousel-inner" role="listbox">
+ <div class="item active">
+ <img src="Images/slide-1.jpg"/>
+ </div>
+ <div class="item">
+ <img src="Images/slide-2.jpg"/>
+ </div>
+ <div class="item">
+ <img src="Images/slide-3.jpg"/>
+</div>
+</div>
+</div>
+<div id="details">
+<ul class="nav nav-tabs nav-justified">
+<li class="active" style="" id="old"><a href="#old">Popular</a></li>
+<li style="" id="late"><a href="#latest">Latest</a></li>
+<li id="coming"><a href="#up">Upcoming</a></li>
+</ul><div id="details_content">
+</br>
+<div id="up">
+<table><tr><td><div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.7" src="Images/images/audihatch1.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Audi Hatch</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 21,33,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td></tr></table>
+</div></td><td style="padding-left:2%;">
+<div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.9" src="Images/images/nissangtr.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Nissan GTR</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 13,45,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></td></tr></table>
+</div></td>
+<td style="padding-left:4%;"><div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.7" src="Images/images/honda.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Honda</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 9,62,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span><span class="glyphicon glyphicon-star-empty"></span></td></tr></table>
+</div></td>
+</tr></table></div>
+<div id="latest">
+<table><tr><td><div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.7" src="Images/images/Volvos90.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Volvos 90</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 16,26,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td></tr></table>
+</div></td><td style="padding-left:2%;">
+<div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.9" src="Images/images/hondaaccord.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Honda Accord</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 14,76,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td></tr></table>
+</div></td>
+<td style="padding-left:4%;"><div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.7" src="Images/images/skodakodiaq.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Skoda Kodiaq</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 23,83,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star-empty"></span></td></tr></table>
+</div></td>
+</tr></table>
+</div>
+<div id="old_content">
+<table><tr><td><div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.7" src="Images/images/audifacelift.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Audi</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 46,60,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td></tr></table>
+</div></td><td style="padding-left:2%;">
+<div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.9" src="Images/images/audicoupe.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Audi Coupe</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 37,56,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td></tr></table>
+</div></td>
+<td style="padding-left:4%;"><div style="width:300px;height:350px;padding:3.5%;border:1px solid blue;box-shadow:1px 1px 10px black;"><img style="opacity:0.7" src="Images/images/volvos80.jpg" width="275px" height="200px"/><figcaption style="font-family:TimesNewRoman;font-size:26px;margin-top:5%;"><center><b>Volos 80</b></center></figcaption><hr style="margin-top:0.6%;margin-bottom:0.6%;"/>
+<table style="font-family:Garamond;font-size:25px;margin-left:5%;"><tr><td>Price</td><td style="padding-left:25px;font-size:22px;">: Rs. 28,39,000/-</td></tr><tr><td>Rating</td><td style="padding-left:25px;">:&nbsp;<span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span><span class="glyphicon glyphicon-star"></span></td></tr></table>
+</div></td>
+</tr></table>
+</div></div>
+</div>
+<div id="logos_main"><center>
+<span id="logo1" class="logos_inner"><img width="200px" height="130px" src="Images/Audi.png"/></span>
+<span id="logo2" class="logos_inner"><img width="200px" height="130px" src="Images/Benz.png"/></span>
+<span id="logo3" class="logos_inner"><img width="200px" height="130px" src="Images/Hyundai.png"/></span>
+<span id="logo4" class="logos_inner"><img width="200px" height="130px" src="Images/Jaguar.png"/></span>
+<span id="logo5" class="logos_inner"><img width="200px" height="130px" src="Images/Nissan.png"/></span></center>
+</div>
+<div class="usedcars"></diV>
+<footer style="color:rgb(78,78,78);font-family:Garamond;padding:3%;">
+<h3 style="padding-left:7%;color:rgb(124,124,124);"><label>&copy; Copyright 2008-2016 Powered By Otbet IT Solutions. All Rights Reserved</h3></label>
+<hr/>
+<table style="margin:2%;margin-left:7%;cursor:default;">
+<th class="heading_table">OVERVIEW</th><th class="heading_table">ONLINE SERVICES</th><th class="heading_table">OTHERS</th><th class="heading_table">CONNECT WITH US</th>
+<tr><td class="table_rows">About Us</td><td class="table_rows">Customer Care</td><td class="table_rows">Privacy Policy</td>
+<td class="table_rows"><span class="glyphicon glyphicon-earphone"></span>&nbsp;1800-280-3930</td></tr>
+<tr><td class="table_rows2">FAQS</td><td class="table_rows2">Car Accessories</td><td class="table_rows2">Terms & Conditions</td>
+<td class="table_rows2"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Otbetitsolutions.com</td></tr>
+</table>
+</footer>
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <span class="close">&times;</span>
+      <h2 style="font-family:TimesNewRoman;margin-bottom:5%;"><center>FEEDBACK</center></h2>
+    </div>
+    <div class="modal-body">
+	<form method="POST" action="<?php $_PHP_SELF?>">
+	<div style="margin:2%;font-family:Garamond;font-size:18px;">
+	<label class="col-sm-1" style="margin-top:3px;" align="right">Email&nbsp;&nbsp;:</label><div class="col-sm-11">
+	  <input type="email" class="form-control" placeholder="Enter Email..." required/>
+	  </div></br><div style="margin-left:2%;padding-top:1%;"><label>Message :</label>
+	  <textarea placeholder="Enter Your Feedback" class="form-control" required></textarea></div>
+    </div></div>
+    <div class="modal-footer"><center>
+      <h3><button type="submit" class="btn mailbtn">Submit</button></center></h3>
+    </div></form>
+  </div>
+</div>
+</div>
+</body>
+</html>
